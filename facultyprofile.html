@@ -1,0 +1,29 @@
+
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>student profile</title>
+</head>
+</head>
+ <body background="bg1.png">
+ <form name=frm method="POST">
+ <img src="pic_mountain.jpg" alt="Mountain View" align=right style="width:300px;height:300px;">
+  </form>
+ </body>
+
+</html>
+
+<?php
+session_start();
+if(!isset($_SESSION['Name']))
+{
+  header("location:prologin4.php");
+
+}
+else{
+echo "Welcome....".$_SESSION['Name']."<br>";
+echo "Ready to evaluate students?<br>";
+echo " Your Session ID...".session_id();
+}
+
+?>

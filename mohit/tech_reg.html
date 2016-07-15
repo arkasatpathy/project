@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+input[type=text],select
+ {
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=password]
+{
+    width: 80%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=email]
+{
+    width: 95%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit]
+ {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover
+ {
+    background-color: #45a049;
+}
+h3
+{
+color:red;
+}
+
+body 
+{
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+<script type="text/javascript">
+function validate_form()
+{
+   var res=true;
+    var x = document.forms["frm"]["nm"].value;
+    if (x == null || x == "") 
+	{
+        alert("Enter name");
+        document.getElementById('a').innerHTML="*";
+		res=false;
+	}
+   else 
+   {
+    document.getElementById('a').innerHTML="";
+   }
+   var y = document.forms["frm"]["id"].value;
+   if (y == null || y == "") 
+	{
+        alert("Enter ID");
+        document.getElementById('b').innerHTML="*";
+		res=false;
+	}
+   else 
+   {
+    document.getElementById('b').innerHTML="";
+   }   
+   var z = document.forms["frm"]["email"].value;
+   if (z == null || z == "") 
+	{
+        alert("Enter email");
+        document.getElementById('d').innerHTML="*";
+		res=false;
+	}
+   else
+   {
+    document.getElementById('d').innerHTML="";
+   }
+   
+   var w = document.forms["frm"]["pwd"].value;
+   if (w<=7 || w>=21 ) 
+   {
+    alert("Enter proper password");
+    document.getElementById('e').innerHTML="*";
+    res=false;
+   }
+   else
+    document.getElementById('e').innerHTML="";   
+   
+   var c = document.forms["frm"]["cno"].value;   
+   if(res)
+   return true;
+   else
+   return false;
+   
+}
+function PwdStr()
+{
+    var p= document.frm.pwd.value.length;
+    if(p>=8 && p<=12)
+    document.getElementById('e').innerHTML="weak...";
+    else if(p>=13 && p<=16)
+    document.getElementById('e').innerHTML="good";
+    else if(p>=17 && p<=20)
+    document.getElementById('e').innerHTML="strong...";
+	   
+}
+</script>
+</head>
+<body>
+  <form name=frm method=post onsubmit="validate_form()" action="tech_insert.php">
+    <h3 align=center>REGISTRATION PAGE</h3>
+	<label for="name">Name</label><br>
+    <input type="text" name="nm" placeholder="Enter your full name in capitals" /><font color=red id=a ></font><br>
+    <label for="id">ID</label><br>
+    <input type="text" name="id" placeholder="Enter your ID" /><font color=red id=b ></font><br> 
+    <label for="stream">Stream</label><br>
+    <select name="stream">
+      <option value="cse">CSE</option>
+      <option value="it">IT</option>
+    </select><font id=c color=red></font><br>
+    <label for="email">Email</label><br>
+    <input type="email" name="email" placeholder="Enter your email id" /><font color=red id=d ></font><br> 
+    <label for="password">Password</label><br>
+    <input type="password" name="pwd" placeholder="min 8 /max 20 characters" onkeydown="PwdStr()" /><font color=red id=e ></font><br> 
+	<label for="cno">Contact Number</label><br>
+    <input type="text" name="cno" placeholder="Enter your mobile number"  /><font color=red id=f ></font><br> 
+    <input type="submit" name="submit" value="Submit"><br>
+  
+</form>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<html><html>
+<head>
+	<link rel="stylesheet" type="text/css" href="menu.css">
+<title>Demo page</title>
+<script language="javascript">
+function SelectRedirect(){
+// ON selection of section this function will work
+//alert( document.getElementById('s1').value);
+
+switch(document.getElementById('s1').value)
+{
+case "first":
+window.top.frames['f3'].location.href ="../project/first1.php";
+break;
+case "second":
+window.top.frames['f3'].location.href ="../project/second.php";
+break;
+case "third":
+window.top.frames['f3'].location.href ="../project/third.php";
+break;
+case "fourth":
+window.top.frames['f3'].location.href ="../project/fourth.php";
+break;
+
+/// Can be extended to other different selections of SubCategory //////
+default:
+window.location="../project/master.html"; // if no selection matches then redirected to home page
+break;
+}// end of switch 
+}
+////////////////// 
+</script>
+</head>
+<body link="red">
+<table border=3 width=100%>
+<tr><td align=center><a href=master.html target=f>Home</a> </td>
+<td align=center><a href=faculty.html target=f3>Faculty</a></td>
+<td align=center><select id="s1" name="student" onChange="SelectRedirect();">
+<option value="zero">Student</option>
+<option value="first">1st Year</option>
+<option value="second">2nd Year</option>
+<option value="third">3rd Year</option>
+<option value="fourth">4th Year</option>
+</select></td>
+<td align=center><a href=proevent.html target=f3>Events</a> </td>
+<td align=center><a href=contactus.html target=f3>Contact Us</a> </td></tr>	
+</body>
+</html>

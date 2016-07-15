@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+input[type=submit]
+ {
+	font-size:20px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover
+ {
+    background-color: #45a049;
+}
+h1
+{
+color:red;
+}
+
+body 
+{
+	font-size:30px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+</style>
+</head>
+<body>
+  <form name=frm method=post action="">
+	<label for="upload">Press upload If you want Submit an assignment</label><br>
+    <input type="submit" name="upload" value="Upload"  onclick="javascript: form.action='FileUpload.php';" ><br><br>
+	<label for="download">Press download If you want to download assignment</label><br>
+    <input type="submit" name="view" value="View"  onclick="javascript: form.action='FileDownload.php';" ><br><br>
+	<label for="result">Press result If you want to view the remarks/results</label><br>
+    <input type="submit" name="remark" value="Result"  onclick="javascript: form.action='fileremark.php';" >
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
